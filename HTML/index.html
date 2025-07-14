@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../CSS/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <div id="ejercicio1">
+    <div id="ejercicio1" class="ejercicio">
+        <h1>Ejercicio 1</h1>
         <label for="edad">Edad:</label>
         <input type="number" id="edad" placeholder="Ingrese su edad">
         <button id="btn-edad">Enviar</button>
@@ -15,20 +17,69 @@
         </div>
     </div>
 
-    <div id="ejercicio2">
+    <div id="ejercicio2" class="ejercicio">
+        <h1>Ejercicio 2</h1>
         <label for="examen">Nota examen</label>
         <input type="number" name="examen" id="examen" placeholder="Ingrese su nota">
         <label for="tareas">tareas</label>
         <input type="number" name="tareas" id="tareas" placeholder="Ingrese su nota de tareas">
         <label for="asistencia">asistencia</label>
         <input type="number" name="asistencia" id="asistencia" placeholder="Ingrese su nota de asistencia">
-        <label for="investigacion"></label>
+        <label for="investigacion">investigacion</label>
         <input type="number" name="investigacion" id="investigacion" placeholder="Ingrese su nota de investigacion">
         <button id="btn-nota">Enviar</button>
         <div class="resultado">
             <p id="msj2" class="msj"></p>
+        </div>
     </div>
     
+    <div id="ejercicio3" class="ejercicio">
+        <h1>Ejercicio 3</h1>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ingrese su nombre">
+        <label for="salario">Salario:</label>
+        <input type="number" id="salario" placeholder="Ingrese su salario">
+        <label for="categoria">Categoria:</label>
+        <select id="categoria">
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+            <option value="d">D</option>
+        </select>
+        <button id="btn-aumento">Enviar</button>
+        <div class="resultado">
+            <p id="msj3" class="msj"></p>
+        </div>
+    </div>
+
+    <div id="ejercicio4" class="ejercicio">
+        <h1>Ejercicio 4</h1>
+        <label for="numero1">Ingrese un número:</label>
+        <input type="number" id="numero1" placeholder="Ingrese un número">
+        <label for="numero2">Ingrese un número:</label>
+        <input type="number" id="numero2" placeholder="Ingrese un número">
+        <button id="btn-mayor">Enviar</button>
+        <div class="resultado">
+            <p id="msj4" class="msj"></p>
+        </div>
+
+    </div>
+    <div id="ejercicio5" class="ejercicio">
+        <h1>Ejercicio 5</h1>
+        <label for="precio">Precio de Venta</label>
+        <input type="number" id="precio" placeholder="Ingrese precio">
+        <label for="modelo">Modelo</label>
+        <select name="modelo" id="modelo">
+            <option value="FORD FIESTA">FORD FIESTA</option>
+            <option value="FORD FOCUS">FORD FOCUS</option>
+            <option value="FORD ESCAPE">FORD ESCAPE</option>
+        </select>
+
+        <button id="btn-descuento">Enviar</button>
+        <div class="resultado">
+            <p id="msj5" class="msj"></p>
+        </div>
+    </div>
     
     
     <script src="../JS/ejercicio1.js"></script>

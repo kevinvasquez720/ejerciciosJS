@@ -4,7 +4,11 @@ coche a la venta es un FORD FOCUS, el descuento será del 10% y si es un FORD ES
 el descuento será del 20%. Mostrar en html el coche seleccionado y el descuento que se 
 aplicara en base a lo que selecciono el usuario.*/
 
-function calcularDescuento(coche) {
+document.getElementById("btn-descuento").addEventListener("click",function calcularDescuento() {
+    let coche = document.getElementById("modelo").value;
+    let precio = parseFloat(document.getElementById("precio").value);
+    let montodescuento = 0;
+    let precioFinal = 0;
     let descuento;
 
     switch (coche.toUpperCase()) {
@@ -21,7 +25,10 @@ function calcularDescuento(coche) {
             console.log("Coche no válido");
             return;
     }
-
-    console.log(`Coche seleccionado: ${coche}`);
-    console.log(`Descuento aplicado: ${(descuento * 100).toFixed(2)}%`);
-}
+    montodescuento = precio * descuento;
+    precioFinal = precio -(precio * descuento);
+    document.getElementById("msj5").innerHTML = `El coche seleccionado es: ${coche} <br>
+    El precio original es: $${precio.toFixed(2)} <br>
+    El descuento aplicado es: $${montodescuento.toFixed(2)} <br>
+    El precio final después del descuento es: $${precioFinal.toFixed(2)}`;
+});

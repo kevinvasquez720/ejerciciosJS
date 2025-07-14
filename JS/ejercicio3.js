@@ -6,10 +6,21 @@ b=30%
 c=10%
 d=20%
 */
-function calcularAumento(nombre, salario, categoria) {
+document.getElementById("btn-aumento").addEventListener("click",function calcularAumento() {
     let aumento;
-
-    switch (categoria) {
+    nombre = document.getElementById("nombre").value;
+    salario = parseFloat(document.getElementById("salario").value);
+    categoria = document.getElementById("categoria").value.toLowerCase();
+    if (isNaN(salario) || salario < 0) {
+        document.getElementById("msj3").innerText = "Por favor, ingrese un salario válido.";
+        return;
+    }
+    else if (!nombre || !categoria) {
+        document.getElementById("msj3").innerText = "Por favor, complete todos los campos.";
+        return;
+    }
+    else {
+        switch (categoria) {
         case 'a':
             aumento = 0.15;
             break;
@@ -28,9 +39,7 @@ function calcularAumento(nombre, salario, categoria) {
     }
 
     const nuevoSalario = salario + (salario * aumento);
-    console.log(`Empleado: ${nombre}`);
-    console.log(`Salario actual: $${salario.toFixed(2)}`);
-    console.log(`Categoría: ${categoria}`);
-    console.log(`Aumento: ${(aumento * 100).toFixed(2)}%`);
-    console.log(`Nuevo salario: $${nuevoSalario.toFixed(2)}`);
-}
+
+    document.getElementById("msj3").innerText = `Empleado: ${nombre}, Salario actual: $${salario.toFixed(2)}, Categoría: ${categoria}, Aumento: ${(aumento * 100).toFixed(2)}%, Nuevo salario: $${nuevoSalario.toFixed(2)}`;
+    }
+});
