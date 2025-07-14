@@ -1,17 +1,18 @@
-/*Se realiza la carga de 10 valores enteros por teclado. Se desea conocer:  
-• La cantidad de valores negativos ingresados. 
-• La cantidad de valores positivos ingresados. 
-• La cantidad de múltiplos de 15. 
-• El valor acumulado de los números ingresados que son pares.*/
+/*Escriba un programa que muestre la tabla de multiplicar del 1 al 10 del número ingresado por el usuario.*/
 
-function tablaDeMultiplicacion(numero) {
+document.getElementById("btn-tabla").addEventListener("click", function tablaDeMultiplicacion() {
+    let numero = parseInt(document.getElementById("numero").value);
+    
     if (isNaN(numero)) {
-        console.log("Por favor, ingrese un número válido.");
+        document.getElementById("msj8").innerHTML = "Por favor, ingrese un número válido.";
         return;
     }
 
-    console.log(`Tabla de multiplicación del ${numero}:`);
+    let resultado = `<strong>Tabla de multiplicar del ${numero}:</strong><br>`;
+    
     for (let i = 1; i <= 10; i++) {
-        console.log(`${numero} x ${i} = ${numero * i}`);
+        resultado += `${numero} x ${i} = ${numero * i}<br>`;
     }
-}
+
+    document.getElementById("msj8").innerHTML = resultado;
+});

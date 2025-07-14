@@ -5,22 +5,29 @@ Fahrenheit, una vez teniendo la temperatura en Fahrenheit deberá devolver lo si
 • Si ºF está entre 68 y 96, sale la frase “Temperatura alta” 
 • Si no está entre ningún caso anterior la frase “Temperatura desconocida” */
 
-function convertirCelsiusAFahrenheit(celsius) {
+document.getElementById("btn-convertir").addEventListener("click",function convertirCelsiusAFahrenheit() {
+
+    let celsius = parseFloat(document.getElementById("celsius").value);
     if (isNaN(celsius)) {
-        console.log("Por favor, ingrese una temperatura válida en Celsius.");
+        document.getElementById("msj9").innerHTML=("Por favor, ingrese una temperatura válida en Celsius.");
         return;
     }
 
     const fahrenheit = (celsius * 9/5) + 32;
-    console.log(`Temperatura en Fahrenheit: ${fahrenheit.toFixed(2)}°F`);
+    let respuesta='';
+    respuesta += (`Temperatura en Fahrenheit: ${fahrenheit.toFixed(2)}°F<br>`);
 
     if (fahrenheit >= 14 && fahrenheit < 32) {
-        console.log("Temperatura baja");
+        respuesta += ("Temperatura baja<br>");
+        document.getElementById("msj9").innerHTML=(respuesta);
     } else if (fahrenheit >= 32 && fahrenheit < 68) {
-        console.log("Temperatura adecuada");
+        respuesta += ("Temperatura adecuada<br>");
+        document.getElementById("msj9").innerHTML=(respuesta);
     } else if (fahrenheit >= 68 && fahrenheit < 96) {
-        console.log("Temperatura alta");
+        respuesta += ("Temperatura alta<br>");
+        document.getElementById("msj9").innerHTML=(respuesta);
     } else {
-        console.log("Temperatura desconocida");
+        respuesta += ("Temperatura desconocida<br>");
+        document.getElementById("msj9").innerHTML=(respuesta);
     }
-}
+});

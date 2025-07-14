@@ -4,18 +4,17 @@
 • La cantidad de múltiplos de 15. 
 • El valor acumulado de los números ingresados que son pares.*/
 
-function analizarValores() {
+document.getElementById("btn-numeros").addEventListener("click", function analizarValores() {
     let negativos = 0;
     let positivos = 0;
     let multiplosDe15 = 0;
     let sumaPares = 0;
 
     for (let i = 0; i < 10; i++) {
-        const valor = parseInt(prompt("Ingrese un número entero:"));
-
+        const valor = parseFloat(prompt("Ingrese un número entero:"));
         if (isNaN(valor)) {
-            console.log("Valor no válido, por favor ingrese un número entero.");
-            i--; // Decrementar i para repetir la iteración
+            alert("Valor no válido, por favor ingrese un número entero.");
+            i--; 
             continue;
         }
 
@@ -33,9 +32,8 @@ function analizarValores() {
             sumaPares += valor;
         }
     }
-
-    console.log(`Cantidad de valores negativos: ${negativos}`);
-    console.log(`Cantidad de valores positivos: ${positivos}`);
-    console.log(`Cantidad de múltiplos de 15: ${multiplosDe15}`);
-    console.log(`Suma de los números pares: ${sumaPares}`);
-}
+    document.getElementById("msj7").innerHTML = `Cantidad de valores negativos: ${negativos} <br>
+    Cantidad de valores positivos: ${positivos} <br>
+    Cantidad de múltiplos de 15: ${multiplosDe15} <br>
+    Suma de los números pares: ${sumaPares}`;       
+});
